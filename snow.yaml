@@ -1,5 +1,5 @@
 - name: Search for incident using host instead of instance
-  hosts: all
+  hosts: localhost
   servicenow.servicenow.snow_record_find:
     username: admin
     password: 5Z8StfpN$eW*
