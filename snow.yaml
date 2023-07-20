@@ -1,11 +1,13 @@
-- name: Search for incident using host instead of instance
-  servicenow.servicenow.snow_record_find:
-    username: admin
-    password: 5Z8StfpN$eW*
-    host: https://dev49922.service-now.com/
-    table: incident
-    # query:
-    #   assignment_group: d625dccec0a8016700a222a0f7900d06
-    return_fields:
-      - number
-      - opened_at
+- name: Check if SSHD is running
+  hosts: all
+  - name: Search for incident using host instead of instance
+    servicenow.servicenow.snow_record_find:
+      username: admin
+      password: 5Z8StfpN$eW*
+      host: https://dev49922.service-now.com/
+      table: incident
+      # query:
+      #   assignment_group: d625dccec0a8016700a222a0f7900d06
+      return_fields:
+        - number
+        - opened_at
