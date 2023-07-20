@@ -1,5 +1,6 @@
 - name: Search for incident using host instead of instance
   hosts: localhost
+  tasks:
   command: echo "hello Ansible"
   # servicenow.servicenow.snow_record_find:
   #   username: admin
