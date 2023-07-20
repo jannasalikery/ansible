@@ -13,3 +13,6 @@
       return_fields:
         - number
         - opened_at
+      register: output
+  - debug: 
+      msg: "{{ output }}"
