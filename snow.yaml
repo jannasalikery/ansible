@@ -2,14 +2,14 @@
   hosts: localhost
   tasks:
   - name: sleep for 300 seconds
-    shell: sleep 300
-  # - snow_record_find:
-  #     username: admin
-  #     password: 5Z8StfpN$eW*
-  #     host: dev49922.service-now.com
-  #     table: incident
-  #     query:
-  #       assignment_group: 8a5055c9c61122780043563ef53438e3
-  #     return_fields:
-  #       - number
-  #       - opened_at
+    shell: echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+  - snow_record_find:
+      username: admin
+      password: 5Z8StfpN$eW*
+      host: dev49922.service-now.com
+      table: incident
+      query:
+        assignment_group: 8a5055c9c61122780043563ef53438e3
+      return_fields:
+        - number
+        - opened_at
