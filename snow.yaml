@@ -3,6 +3,11 @@
   tasks:
   - name: sleep for 300 seconds
     shell: echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+    
+  - name: Get environment
+    debug:
+      msg: "{{ ansible_env }}"
+      
   - snow_record_find:
       username: "{{ Username }}"
       password: "{{ Password }}"
