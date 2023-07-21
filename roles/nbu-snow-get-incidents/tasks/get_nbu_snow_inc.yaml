@@ -12,4 +12,4 @@
     - sys_id
   register: output
 - debug: 
-  msg: "{{ output['record'] | json_query('[*].number')}}"
+    msg: "{{ output.msg.record)}}"
