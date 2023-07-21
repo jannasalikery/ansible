@@ -1,0 +1,8 @@
+- name: Search for incident using host instead of instance
+  hosts: localhost
+  tasks:
+  - name: sleep for 300 seconds
+    shell: ansible-doc snow_record_find
+    register: docs
+  - debug:
+      msg: "{{ docs }}"
