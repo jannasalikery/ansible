@@ -11,5 +11,5 @@
     - opened_at
     - sys_id
   register: output
-- debug: 
+- debug: Printing NBU incidents
     msg: "{{ output.msg.record)}}"
