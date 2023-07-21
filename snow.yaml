@@ -18,6 +18,7 @@
       return_fields:
         - number
         - opened_at
+        - sys_id
     register: output
   - debug: 
       msg: "{{ output }}"
