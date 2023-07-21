@@ -8,16 +8,16 @@
     debug:
       msg: "{{ ansible_env }}"
       
-  - snow_record_find:
-      username: "{{ Username }}"
-      password: "{{ Password }}"
-      host: dev49922.service-now.com
-      table: incident
-      query:
-        assignment_group: 8a5055c9c61122780043563ef53438e3
-      return_fields:
-        - number
-        - opened_at
-    register: output
-  - debug: 
-      msg: "{{ output }}"
+  # - snow_record_find:
+  #     username: "{{ Username }}"
+  #     password: "{{ Password }}"
+  #     host: dev49922.service-now.com
+  #     table: incident
+  #     query:
+  #       assignment_group: 8a5055c9c61122780043563ef53438e3
+  #     return_fields:
+  #       - number
+  #       - opened_at
+  #   register: output
+  # - debug: 
+  #     msg: "{{ output }}"
