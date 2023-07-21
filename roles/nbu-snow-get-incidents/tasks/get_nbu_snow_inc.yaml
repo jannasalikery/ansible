@@ -1,0 +1,15 @@
+- name: Search for incident using host instead of instance
+  snow_record_find:
+  username: "{{ Username }}"
+  password: "{{ Password }}"
+  host: dev49922.service-now.com
+  table: incident
+  query:
+    assignment_group: 8a5055c9c61122780043563ef53438e3
+  return_fields:
+    - number
+    - opened_at
+    - sys_id
+  register: output
+- debug: 
+  msg: "{{ output }}"
