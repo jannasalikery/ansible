@@ -1,13 +1,9 @@
 - name: Search for incident using host instead of instance
   hosts: localhost
   tasks:
-  - name: sleep for 300 seconds
+  - name: Update /etc/resolv.conf file
     shell: echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-    
-  # - name: Get environment
-  #   debug:
-  #     msg: "{{ ansible_env }}"
-      
+
   - snow_record_find:
       username: "{{ Username }}"
       password: "{{ Password }}"
@@ -20,11 +16,13 @@
         - opened_at
         - sys_id
     register: snow_incidents
+    
+  - debug: 
+      msg: "{{ snow_incidents }}"
 
   - name: Display incident information
     debug:
       msg: "{{ item.number }} - {{ item.short_description }}"
     loop: "{{ snow_incidents.records }}"
     
-  - debug: 
-      msg: "{{ snow_incidents }}"
+
