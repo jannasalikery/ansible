@@ -22,7 +22,7 @@
     register: snow_incidents
     
   - debug: 
-      msg: "{{ snow_incidents.record }}"
+      msg: "{{ snow_incidents }}"
 
   # - name: Display incident information
   #   debug:
@@ -32,7 +32,7 @@
   - name: Filter open state incidents
     set_fact:
       #pen_incidents: "{{ snow_incidents.record | json_query('[?state == "1"].{number: number, short_description: short_description}') }}"
-      open_incidents: "{{ snow_incidents['record']| json_query('[?state=='1'].{number: number, short_description: short_description}') }}"
+      open_incidents: "{{ snow_incidents | json_query('record[?state=='1'].{number: number, short_description: short_description}') }}"
 
   # - name: Display incident information
   #   debug:
