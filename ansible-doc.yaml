@@ -43,7 +43,7 @@
   - name: Printing incident numbers
     debug: msg="{{ snow_incidents.record | json_query(jmesquery)}}"
     vars:
-      jmesquery: "[*].number
+      jmesquery: "[*].number"
       #jmesquery: "[? name==`Leanne Graham`].{Name: name, Email: email, Phone: phone, CompanyName: company.name, WebSite: website, City: address.city}"
       
   # - name: Filter open state incidents
