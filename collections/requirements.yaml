@@ -4,5 +4,5 @@ collections:
     version: 1.6.0
     source: https://galaxy.ansible.com
 
-dependencies:
-  'community.general': '2.2.0'
+# dependencies:
+#   'community.general': '2.2.0'
