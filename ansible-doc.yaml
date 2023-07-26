@@ -50,7 +50,7 @@
     debug: msg="{{ snow_incidents.record | json_query(jmesquery)}}"
     vars:
       #jmesquery: "[? state==`1`].number"
-      jmesquery: "snow_incidents.record[?state=='1'].number"
+      jmesquery: "[?state=='1'].number"
       #jmesquery: "[? name==`Leanne Graham`].{Name: name, Email: email, Phone: phone, CompanyName: company.name, WebSite: website, City: address.city}"
       
   # - name: Filter open state incidents
