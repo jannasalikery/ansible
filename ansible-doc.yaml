@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
   - name: Update /etc/resolv.conf file
-    shell: echo "nameserver 8.8.8.8" >> /etc/resolv.conf;ansible-galaxy collection install community.general -p /usr/share/ansible/collections
+    shell: echo "nameserver 8.8.8.8" >> /etc/resolv.conf;/usr/bin/pip3 install jmespath
 
   - snow_record_find:
       username: "{{ Username }}"
