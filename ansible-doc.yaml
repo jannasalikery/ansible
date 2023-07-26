@@ -34,15 +34,27 @@
    #   vars:
    #     jmesquery: "[? name==`Leanne Graham`].{Name: name, Email: email, Phone: phone, CompanyName: company.name, WebSite: website, City: address.city}"
 
-  - name: Filter open state incidents
-    set_fact:
-      #open_incidents: "{{ snow_incidents.record | json_query('[?state == "1"].{number: number, short_description: short_description}') }}"
-      #open_incidents: "{{ snow_incidents | json_query('record[?state==`2`].{number: number, short_description: short_description}') }}"
-      open_incidents: "{{ snow_incidents.record | json_query('[?incident_state == `1`]') }}"
+  # - name: Filter open state incidents
+  #   set_fact:
+  #     #open_incidents: "{{ snow_incidents.record | json_query('[?state == "1"].{number: number, short_description: short_description}') }}"
+  #     #open_incidents: "{{ snow_incidents | json_query('record[?state==`2`].{number: number, short_description: short_description}') }}"
+  #     open_incidents: "{{ snow_incidents.record | json_query('[?incident_state == `1`]') }}"
+  
+  - name: Business Card
+    debug: msg="{{ snow_incidents.record.json | json_query(jmesquery)}}"
+    vars:
+      jmesquery: "[? state==`1`].{number: number, short_description: short_description}"
+      #jmesquery: "[? name==`Leanne Graham`].{Name: name, Email: email, Phone: phone, CompanyName: company.name, WebSite: website, City: address.city}"
+      
+  # - name: Filter open state incidents
+  #   debug:
+  #     #open_incidents: "{{ snow_incidents.record | json_query('[?state == "1"].{number: number, short_description: short_description}') }}"
+  #     #open_incidents: "{{ snow_incidents | json_query('record[?state==`2`].{number: number, short_description: short_description}') }}"
+  #     msg: open_incidents: "{{ snow_incidents.record.json  | json_query('[? incident_state == `1`]') }}"
 
-  - name: print open_incidents
-    debug:
-      msg: open_incidents - "{{ open_incidents }}"
+  # - name: print open_incidents
+  #   debug:
+  #     msg: open_incidents - "{{ open_incidents }}"
        
   # - name: setDomainName
   #   set_fact:
