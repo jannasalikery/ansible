@@ -12,7 +12,7 @@
       query:
         AND:
           equals:
-            active: "True"
+            #active: "True"
             #type: "standard"
             assignment_group: 8a5055c9c61122780043563ef53438e3
       # return_fields:
@@ -24,9 +24,18 @@
   # - debug: 
   #     msg: "{{ snow_incidents }}"
 
+  # - name: Display incident information
+  #   debug:
+  #     msg: "{{ item.number }} - {{ item.short_description }}"
+  #   loop: "{{ snow_incidents.record }}"
+
+  - name: Filter open state incidents
+    set_fact:
+      open_incidents: "{{ snow_incidents.record | json_query('[?state==`1`].{number: number, short_description: short_description}') }}"
+
   - name: Display incident information
     debug:
       msg: "{{ item.number }} - {{ item.short_description }}"
-    loop: "{{ snow_incidents.record }}"
-    
+    loop: "{{ open_incidents }}"
+  
 
