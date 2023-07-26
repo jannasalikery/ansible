@@ -42,7 +42,7 @@
 
    - name: print open_incidents
      debug:
-       msg: open_incidents - "{{ open_incidents }}"
+       msg: "open_incidents - {{ open_incidents }}"
        
   # - name: setDomainName
   #   set_fact:
