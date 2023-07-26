@@ -12,10 +12,10 @@
       query:
         #assignment_group: 8a5055c9c61122780043563ef53438e3
         active: true
-      return_fields:
-        - number
-        - opened_at
-        - sys_id
+      # return_fields:
+      #   - number
+      #   - opened_at
+      #   - sys_id
     register: snow_incidents
     
   - debug: 
