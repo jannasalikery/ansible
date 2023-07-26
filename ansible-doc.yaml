@@ -21,8 +21,8 @@
       #   - sys_id
     register: snow_incidents
     
-  - debug: 
-      msg: "{{ snow_incidents }}"
+  # - debug: 
+  #     msg: "{{ snow_incidents }}"
 
   - name: Display incident information
     debug:
