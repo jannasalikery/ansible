@@ -39,7 +39,11 @@
       #open_incidents: "{{ snow_incidents.record | json_query('[?state == "1"].{number: number, short_description: short_description}') }}"
       #open_incidents: "{{ snow_incidents | json_query('record[?state==`2`].{number: number, short_description: short_description}') }}"
       open_incidents: "{{ snow_incidents.record | json_query('[?state == `2`].number') }}"
-      
+
+   - name: print open_incidents
+     debug:
+       msg: "{{ open_incidents }}"
+       
   # - name: setDomainName
   #   set_fact:
   #     domain_name: "{{ snow_incidents | json_query(jmesquery) }}"
@@ -50,5 +54,6 @@
   #   debug:
   #     msg: "{{ item.number }} - {{ item.short_description }}"
   #   loop: "{{ open_incidents }}"
+  
   
 
