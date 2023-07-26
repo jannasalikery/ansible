@@ -43,7 +43,7 @@
     set_fact:
       domain_name: "{{ snow_incidents | json_query(jmesquery) }}"
     vars:
-      jmesquery: 'record[*].number'
+      jmesquery: 'record[? state==`1`].number'
 
   # - name: Display incident information
   #   debug:
