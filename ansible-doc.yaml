@@ -19,6 +19,12 @@
         - number
         - opened_at
         - sys_id
-    register: output
+    register: snow_incidents
+
+  - name: Display incident information
+    debug:
+      msg: "{{ item.number }} - {{ item.short_description }}"
+    loop: "{{ snow_incidents.json.result }}"
+    
   - debug: 
-      msg: "{{ output }}"
+      msg: "{{ snow_incidents }}"
