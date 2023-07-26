@@ -23,6 +23,6 @@
   - name: Display incident information
     debug:
       msg: "{{ item.number }} - {{ item.short_description }}"
-    loop: "{{ snow_incidents.records }}"
+    loop: "{{ snow_incidents.record }}"
     
 
