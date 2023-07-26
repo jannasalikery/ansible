@@ -38,7 +38,7 @@
     set_fact:
       #open_incidents: "{{ snow_incidents.record | json_query('[?state == "1"].{number: number, short_description: short_description}') }}"
       #open_incidents: "{{ snow_incidents | json_query('record[?state==`2`].{number: number, short_description: short_description}') }}"
-      open_incidents: "{{ snow_incidents.record | json_query('[?assignment_group == `8a5055c9c61122780043563ef53438e3`]') }}"
+      open_incidents: "{{ snow_incidents.record | json_query('[?incident_state == `1`]') }}"
 
   - name: print open_incidents
     debug:
