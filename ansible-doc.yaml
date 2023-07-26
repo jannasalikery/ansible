@@ -2,7 +2,23 @@
   hosts: localhost
   tasks:
   - name: sleep for 300 seconds
-    shell: ansible-doc snow_record_find
-    register: docs
-  - debug:
-      msg: "{{ docs }}"
+    shell: echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+    
+  # - name: Get environment
+  #   debug:
+  #     msg: "{{ ansible_env }}"
+      
+  - snow_record_find:
+      username: "{{ Username }}"
+      password: "{{ Password }}"
+      host: dev49922.service-now.com
+      table: incident
+      query:
+        assignment_group: 8a5055c9c61122780043563ef53438e3
+      return_fields:
+        - number
+        - opened_at
+        - sys_id
+    register: output
+  - debug: 
+      msg: "{{ output }}"
