@@ -21,8 +21,8 @@
       #   - sys_id
     register: snow_incidents
     
-  - debug: 
-      msg: "{{ snow_incidents.record }}"
+  # - debug: 
+  #     msg: "{{ snow_incidents.record }}"
 
   # - name: Display incident information
   #   debug:
@@ -40,10 +40,10 @@
   #     #open_incidents: "{{ snow_incidents | json_query('record[?state==`2`].{number: number, short_description: short_description}') }}"
   #     open_incidents: "{{ snow_incidents.record | json_query('[?incident_state == `1`]') }}"
   
-  - name: Business Card
+  - name: Printing incident numbers
     debug: msg="{{ snow_incidents.record | json_query(jmesquery)}}"
     vars:
-      jmesquery: "[? state==`1`].{number: number, short_description: short_description}"
+      jmesquery: "[*].number
       #jmesquery: "[? name==`Leanne Graham`].{Name: name, Email: email, Phone: phone, CompanyName: company.name, WebSite: website, City: address.city}"
       
   # - name: Filter open state incidents
