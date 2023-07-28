@@ -21,8 +21,8 @@
   - name: Printing open state incident numbers 
     debug: msg="{{ snow_incidents.record | json_query(jmesquery)}}"
     vars:
-      #jmesquery: "[?state=='2'].{number: number, short_description: short_description}"
-      jmesquery: "[?state=='2'].number"
+      jmesquery: "[?state=='2'].{number: number, short_description: short_description}"
+      #jmesquery: "[?state=='2'].number"
 
       
   
