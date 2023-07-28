@@ -19,7 +19,7 @@
   #     jmesquery: "[*].number"
 
   - name: Printing open state incident numbers 
-    set_fact
+    set_fact:
       open_incidents: "{{ snow_incidents.record | json_query(jmesquery)}}"
     vars:
       jmesquery: "[?state=='2'].{number: number, short_description: short_description}"
