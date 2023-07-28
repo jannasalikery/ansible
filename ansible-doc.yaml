@@ -22,7 +22,7 @@
     set_fact:
       open_incidents: "{{ snow_incidents.record | json_query(jmesquery)}}"
     vars:
-      jmesquery: "[?state=='2'].{number: number, short_description: short_description}"
+      jmesquery: "[?state=='1'].{number: number, short_description: short_description}"
       
   - name: Print all the open state incidents
     debug:
