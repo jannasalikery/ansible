@@ -1,6 +1,7 @@
 - name: Get NetBackup Snow incidents
   hosts: localhost
+  gather_facts: false
   tasks:
   - name: Get NetBackup Snow incidents role
     include_role:
-      name: "nbu-snow-get-incidents"
+      name: nbu-snow-get-incidents
