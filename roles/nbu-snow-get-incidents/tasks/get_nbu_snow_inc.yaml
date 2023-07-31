@@ -1,24 +1,21 @@
-- name: Search for incident using host instead of instance
-  hosts: localhost
-  tasks:
-  - name: Update /etc/resolv.conf file
-    shell: echo "nameserver 8.8.8.8" >> /etc/resolv.conf;/usr/bin/pip3 install jmespath
+- name: Update /etc/resolv.conf file
+  shell: echo "nameserver 8.8.8.8" >> /etc/resolv.conf;/usr/bin/pip3 install jmespath
 
-  - snow_record_find:
-      username: "{{ Username }}"
-      password: "{{ Password }}"
-      instance: dev49922
-      table: incident
-      query:
-        assignment_group: 8a5055c9c61122780043563ef53438e3
-    register: snow_incidents
+- snow_record_find:
+    username: "{{ Username }}"
+    password: "{{ Password }}"
+    instance: dev49922
+    table: incident
+    query:
+      assignment_group: 8a5055c9c61122780043563ef53438e3
+  register: snow_incidents
+
+- name: Printing open state incident numbers 
+  set_fact:
+    open_incidents: "{{ snow_incidents.record | json_query(jmesquery)}}"
+  vars:
+    jmesquery: "[?state=='1'].{number: number, short_description: short_description}"
     
-  - name: Printing open state incident numbers 
-    set_fact:
-      open_incidents: "{{ snow_incidents.record | json_query(jmesquery)}}"
-    vars:
-      jmesquery: "[?state=='1'].{number: number, short_description: short_description}"
-      
-  - name: Print all the open state incidents
-    debug:
-      msg: "{{ open_incidents }}"
+- name: Print all the open state incidents
+  debug:
+    msg: "{{ open_incidents }}"
