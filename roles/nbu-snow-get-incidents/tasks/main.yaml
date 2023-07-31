@@ -1,2 +1,2 @@
 - name: include_task
-  include_task: get_nbu_snow_inc.yaml
+  include: get_nbu_snow_inc.yaml
