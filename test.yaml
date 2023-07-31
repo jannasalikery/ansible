@@ -1,4 +1,4 @@
 ---
 - name: Get NetBackup Snow incidents role
   include_role:
-    name: "nbu-snow-get-incidents"
+    name: roles/nbu-snow-get-incidents
