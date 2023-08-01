@@ -1,1 +1,4 @@
-
+- set_fact:
+    open_incidents: "{{ snow_incidents.record | json_query(jmesquery)}}"
+  vars:
+    jmesquery: "[?state=='1'].{number: number, short_description: short_description}"
