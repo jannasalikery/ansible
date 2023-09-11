@@ -1,7 +1,9 @@
 - name: Get NetBackup Snow incidents
   hosts: localhost
   gather_facts: false
+  vars_files:
+    - variable/default.yml
   tasks:
-  - name: Get NetBackup Snow incidents role
-    include_role:
-      name: nbu-snow-get-incidents
+  - name: print username
+    debug:
+      msg: "{{ username }}"
