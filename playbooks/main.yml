@@ -1,0 +1,10 @@
+- name: Get NetBackup Snow incidents
+  hosts: localhost
+  #connection: local
+  gather_facts: false
+  vars_files:
+    - ../variable/default.yml
+  tasks:
+  - name: print username
+    debug:
+      msg: "{{ username }}"
