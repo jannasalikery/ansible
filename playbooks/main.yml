@@ -7,4 +7,4 @@
   tasks:
   - name: print username
     debug:
-      msg: "{{ username }}"
+      msg: "username is {{ username }} and password is {{ password }}" 
