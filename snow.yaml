@@ -11,7 +11,7 @@
   - snow_record_find:
       username: "{{ Username }}"
       password: "{{ Password }}"
-      host: dev49922.service-now.com
+      host: dev141954.service-now.com
       table: incident
       query:
         assignment_group: 8a5055c9c61122780043563ef53438e3
