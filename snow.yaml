@@ -15,7 +15,7 @@
       table: incident
       query:
         assignment_group: 8a5055c9c61122780043563ef53438e3
-      order_by: "-sys_created_on"
+      order_by: "+sys_created_on"
       return_fields:
         - number
         # - opened_at
