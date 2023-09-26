@@ -17,8 +17,8 @@
         assignment_group: 8a5055c9c61122780043563ef53438e3
       return_fields:
         - number
-        - opened_at
-        - sys_id
+        # - opened_at
+        # - sys_id
     register: output
   - debug: 
       msg: "{{ output }}"
