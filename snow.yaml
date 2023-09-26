@@ -9,8 +9,8 @@
   #     msg: "{{ ansible_env }}"
       
   - snow_record_find:
-      username: "{{ Username }}"
-      password: "{{ Password }}"
+      username: admin
+      password: N$g6QjIQ2u%o
       host: dev141954.service-now.com
       table: incident
       query:
