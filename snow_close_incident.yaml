@@ -9,7 +9,7 @@
         password: N$g6QjIQ2u%o
         table: incident
         state: present
-        number: INC0000601
+        number: INC0000046
         data:
           state: 6  # Resolved state (adjust the state value according to your ServiceNow instance)
           close_code: "Solved"  # Adjust the close code as needed
