@@ -1,0 +1,17 @@
+---
+- name: Resolve Incident in ServiceNow
+  hosts: localhost
+  tasks:
+    - name: Use snow_record to resolve an incident
+      snow_record:
+        instance: "https://dev141954.service-now.com"
+        username: admin
+        password: N$g6QjIQ2u%o
+        table: incident
+        action: update
+        sys_id: "9e7f9864532023004247ddeeff7b121f"
+        data:
+          state: 6  # Resolved state (adjust the state value according to your ServiceNow instance)
+          close_code: "Solved"  # Adjust the close code as needed
+          close_notes: "Incident has been resolved."  # Your resolution notes
+      delegate_to: localhost
