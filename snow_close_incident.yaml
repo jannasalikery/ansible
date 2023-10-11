@@ -9,7 +9,7 @@
         password: N$g6QjIQ2u%o
         table: incident
         state: present
-        number: INC0000046
+        sys_id: a9e30c7dc61122760116894de7bcc7bd
         data:
           state: 6  # Resolved state (adjust the state value according to your ServiceNow instance)
           assigned_to: 681b365ec0a80164000fb0b05854a0cd
