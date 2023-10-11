@@ -12,6 +12,7 @@
         number: INC0000046
         data:
           state: 7  # Resolved state (adjust the state value according to your ServiceNow instance)
+          assigned_to: 681b365ec0a80164000fb0b05854a0cd
           short_description: "Solved"  # Adjust the close code as needed
           work_notes: "Incident has been resolved."  # Your resolution notes
       delegate_to: localhost
