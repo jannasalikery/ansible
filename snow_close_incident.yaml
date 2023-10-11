@@ -4,7 +4,7 @@
   tasks:
     - name: Use snow_record to resolve an incident
       snow_record:
-        instance: dev141954.service-now.com
+        instance: dev141954
         username: admin
         password: N$g6QjIQ2u%o
         table: incident
