@@ -8,8 +8,8 @@
         username: admin
         password: N$g6QjIQ2u%o
         table: incident
-        action: update
-        sys_id: "9e7f9864532023004247ddeeff7b121f"
+        state: present
+        number: INC0000601
         data:
           state: 6  # Resolved state (adjust the state value according to your ServiceNow instance)
           close_code: "Solved"  # Adjust the close code as needed
