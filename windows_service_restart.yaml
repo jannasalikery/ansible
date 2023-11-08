@@ -6,5 +6,5 @@
     - ../variable/default.yml
   tasks:
   - name: print username
-    win_ping:
+    ping:
     delegate_to: localhost 
