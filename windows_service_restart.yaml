@@ -7,7 +7,7 @@
 
 
 - name: Windows server ping test
-  hosts: Netbackup
+  hosts: 192.168.56.121
   gather_facts: false
   tasks:
   - name: ping test
