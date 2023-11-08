@@ -1,9 +1,6 @@
-- name: Get NetBackup Snow incidents
+- name: Windows server ping test
   hosts: all
-  #connection: local
   gather_facts: false
-  vars_files:
-    - ../variable/default.yml
   tasks:
   - name: Update /etc/resolv.conf file
     shell: echo "nameserver 8.8.8.8" >> /etc/resolv.conf;/usr/bin/pip3 install pywinrm
