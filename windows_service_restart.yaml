@@ -1,9 +1,15 @@
 - name: Windows server ping test
-  hosts: all
+  hosts: localhost
   gather_facts: false
   tasks:
   - name: Update /etc/resolv.conf file
     shell: echo "nameserver 8.8.8.8" >> /etc/resolv.conf;/usr/bin/pip3 install pywinrm
+
+
+- name: Windows server ping test
+  hosts: Netbackup
+  gather_facts: false
+  tasks:
   - name: ping test
     ping:
     delegate_to: localhost 
