@@ -1,0 +1,10 @@
+- name: Get NetBackup Snow incidents
+  hosts: all
+  #connection: local
+  gather_facts: false
+  vars_files:
+    - ../variable/default.yml
+  tasks:
+  - name: print username
+    win_ping:
+    delegate_to: localhost 
