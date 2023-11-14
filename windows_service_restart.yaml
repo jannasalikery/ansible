@@ -11,5 +11,5 @@
   gather_facts: false
   tasks:
   - name: ping test
-    ping:
+    win_ping:
     delegate_to: localhost 
