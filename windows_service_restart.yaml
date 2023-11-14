@@ -7,7 +7,7 @@
 
 
 - name: Windows server ping test
-  hosts: 192.168.56.121
+  hosts: 192.168.56.142
   gather_facts: false
   tasks:
   - name: ping test
