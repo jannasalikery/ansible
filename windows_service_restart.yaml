@@ -13,3 +13,8 @@
   - name: ping test
     ping:
     delegate_to: localhost 
+  - name: print hostname
+    shell: hostname
+    register: output
+  - debug:
+      msg: "{{ output }}"
