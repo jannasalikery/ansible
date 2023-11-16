@@ -10,11 +10,14 @@
   hosts: 192.168.56.142
   gather_facts: false
   tasks:
-  - name: ping test
-    ping:
-    delegate_to: localhost 
-  - name: print hostname
-    shell: hostname
-    register: output
-  - debug:
-      msg: "{{ output }}"
+  - include_tasks: jana.yaml
+
+  
+  # - name: ping test
+  #   ping:
+  #   delegate_to: localhost 
+  # - name: print hostname
+  #   shell: hostname
+  #   register: output
+  # - debug:
+  #     msg: "{{ output }}"
