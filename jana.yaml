@@ -1,0 +1,6 @@
+  - name: print hostname
+    shell: hostname
+    register: output
+    
+  - debug:
+      msg: "{{ output }}"
