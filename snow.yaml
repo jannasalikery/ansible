@@ -14,7 +14,7 @@
       host: dev141954.service-now.com
       table: incident
       query:
-        assignment_group: 8a5055c9c61122780043563ef53438e3
+        assignment_group: 8a5055c9c61122780043563ef53438e3_jana
       max_records: 2
       #order_by: "-number"
       order_by: "sys_created_on"
